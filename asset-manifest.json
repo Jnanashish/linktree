@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/linktree/static/css/main.f53bba7a.chunk.css",
-    "main.js": "/linktree/static/js/main.37f1aa9c.chunk.js",
-    "main.js.map": "/linktree/static/js/main.37f1aa9c.chunk.js.map",
-    "runtime-main.js": "/linktree/static/js/runtime-main.e22fb8f2.js",
-    "runtime-main.js.map": "/linktree/static/js/runtime-main.e22fb8f2.js.map",
-    "static/js/2.f5991f7a.chunk.js": "/linktree/static/js/2.f5991f7a.chunk.js",
-    "static/js/2.f5991f7a.chunk.js.map": "/linktree/static/js/2.f5991f7a.chunk.js.map",
-    "index.html": "/linktree/index.html",
-    "precache-manifest.a3b9dcbc7066ad05d656bcab34abc971.js": "/linktree/precache-manifest.a3b9dcbc7066ad05d656bcab34abc971.js",
-    "service-worker.js": "/linktree/service-worker.js",
-    "static/css/main.f53bba7a.chunk.css.map": "/linktree/static/css/main.f53bba7a.chunk.css.map",
-    "static/js/2.f5991f7a.chunk.js.LICENSE.txt": "/linktree/static/js/2.f5991f7a.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/linktree/static/media/logo.2c0d067c.png"
+    "main.css": "/thecodergeek.link/static/css/main.f53bba7a.chunk.css",
+    "main.js": "/thecodergeek.link/static/js/main.37f1aa9c.chunk.js",
+    "main.js.map": "/thecodergeek.link/static/js/main.37f1aa9c.chunk.js.map",
+    "runtime-main.js": "/thecodergeek.link/static/js/runtime-main.0ffc5f25.js",
+    "runtime-main.js.map": "/thecodergeek.link/static/js/runtime-main.0ffc5f25.js.map",
+    "static/js/2.f5991f7a.chunk.js": "/thecodergeek.link/static/js/2.f5991f7a.chunk.js",
+    "static/js/2.f5991f7a.chunk.js.map": "/thecodergeek.link/static/js/2.f5991f7a.chunk.js.map",
+    "index.html": "/thecodergeek.link/index.html",
+    "precache-manifest.b7a0e24a333e9b4f0d7ac0dee183d34b.js": "/thecodergeek.link/precache-manifest.b7a0e24a333e9b4f0d7ac0dee183d34b.js",
+    "service-worker.js": "/thecodergeek.link/service-worker.js",
+    "static/css/main.f53bba7a.chunk.css.map": "/thecodergeek.link/static/css/main.f53bba7a.chunk.css.map",
+    "static/js/2.f5991f7a.chunk.js.LICENSE.txt": "/thecodergeek.link/static/js/2.f5991f7a.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/thecodergeek.link/static/media/logo.2c0d067c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.e22fb8f2.js",
+    "static/js/runtime-main.0ffc5f25.js",
     "static/js/2.f5991f7a.chunk.js",
     "static/css/main.f53bba7a.chunk.css",
     "static/js/main.37f1aa9c.chunk.js"
