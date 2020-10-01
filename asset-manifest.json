@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/thecodergeek.link/static/css/main.f53bba7a.chunk.css",
-    "main.js": "/thecodergeek.link/static/js/main.37f1aa9c.chunk.js",
-    "main.js.map": "/thecodergeek.link/static/js/main.37f1aa9c.chunk.js.map",
-    "runtime-main.js": "/thecodergeek.link/static/js/runtime-main.0ffc5f25.js",
-    "runtime-main.js.map": "/thecodergeek.link/static/js/runtime-main.0ffc5f25.js.map",
-    "static/js/2.f5991f7a.chunk.js": "/thecodergeek.link/static/js/2.f5991f7a.chunk.js",
-    "static/js/2.f5991f7a.chunk.js.map": "/thecodergeek.link/static/js/2.f5991f7a.chunk.js.map",
-    "index.html": "/thecodergeek.link/index.html",
-    "precache-manifest.b7a0e24a333e9b4f0d7ac0dee183d34b.js": "/thecodergeek.link/precache-manifest.b7a0e24a333e9b4f0d7ac0dee183d34b.js",
-    "service-worker.js": "/thecodergeek.link/service-worker.js",
-    "static/css/main.f53bba7a.chunk.css.map": "/thecodergeek.link/static/css/main.f53bba7a.chunk.css.map",
-    "static/js/2.f5991f7a.chunk.js.LICENSE.txt": "/thecodergeek.link/static/js/2.f5991f7a.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/thecodergeek.link/static/media/logo.2c0d067c.png"
+    "main.css": "/www.thecodergeek.link/static/css/main.f53bba7a.chunk.css",
+    "main.js": "/www.thecodergeek.link/static/js/main.37f1aa9c.chunk.js",
+    "main.js.map": "/www.thecodergeek.link/static/js/main.37f1aa9c.chunk.js.map",
+    "runtime-main.js": "/www.thecodergeek.link/static/js/runtime-main.2e318e9a.js",
+    "runtime-main.js.map": "/www.thecodergeek.link/static/js/runtime-main.2e318e9a.js.map",
+    "static/js/2.f5991f7a.chunk.js": "/www.thecodergeek.link/static/js/2.f5991f7a.chunk.js",
+    "static/js/2.f5991f7a.chunk.js.map": "/www.thecodergeek.link/static/js/2.f5991f7a.chunk.js.map",
+    "index.html": "/www.thecodergeek.link/index.html",
+    "precache-manifest.df5686ed2cc9ad5e46e9989ed83d08a5.js": "/www.thecodergeek.link/precache-manifest.df5686ed2cc9ad5e46e9989ed83d08a5.js",
+    "service-worker.js": "/www.thecodergeek.link/service-worker.js",
+    "static/css/main.f53bba7a.chunk.css.map": "/www.thecodergeek.link/static/css/main.f53bba7a.chunk.css.map",
+    "static/js/2.f5991f7a.chunk.js.LICENSE.txt": "/www.thecodergeek.link/static/js/2.f5991f7a.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/www.thecodergeek.link/static/media/logo.2c0d067c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0ffc5f25.js",
+    "static/js/runtime-main.2e318e9a.js",
     "static/js/2.f5991f7a.chunk.js",
     "static/css/main.f53bba7a.chunk.css",
     "static/js/main.37f1aa9c.chunk.js"
