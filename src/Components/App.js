@@ -4,6 +4,7 @@ import "../main.css";
 import Logo from "./Logo.js";
 import Featured from "./Featured.js";
 import Links from "./Links";
+import Email from "./Email.js";
 
 function App() {
   return (
@@ -30,6 +31,11 @@ function App() {
         link="https://amazon.in/shop/thecodergeek"
         name="🛍️ Visit Our Amazon Store"
       />
+      <h2 className="title">
+        Subscribe to get More updates <span>👇</span>
+      </h2>
+
+      <Email />
     </div>
   );
 }
