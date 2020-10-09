@@ -18,7 +18,7 @@ function App() {
       <h2 className="featured">Featured Links</h2>
       <Featured
         link="https://www.algoexpert.io/thecodergeek"
-        name="Algoexpert👨‍💻: The ultimate resource for coding interviews. Use code 'thecodergeek' to get 15% off"
+        name="Algoexpert👨‍💻: Use code 'thecodergeek' to get 10% off"
       />
 
       {/* Other Links */}
