@@ -1,6 +1,6 @@
 {
   "name": "linktree",
-  "homepage": "https://thecodergeek.link",
+  "homepage": "https://jnanashish.github.io/linktree",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
