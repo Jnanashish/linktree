@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
 
-function App() {
+// react-router
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
+// context
+import { UserContext } from "./context/UserContext"
+
+//firebase
+import "firebase/auth"
+
+// components
+import Admin from "./Pages/Admin"
+import Signin from "./Pages/Signin"
+import Home from "./Pages/Home"
+
+// Main style
+import "./Style/App.css"
+
+const App = () =>{
+  // state for user
+  const [user, setUser] = useState(null)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <UserContext.Provider value = {{user, setUser}}>
+        <Switch>
+          <Route exact path = "/" component={Home}/>
+          <Route exact path = "/admin" component={Admin}/>
+          <Route exact path = "/signin" component={Signin}/>
+          <Route exact path = "*" component={Home}/>
+        </Switch>
+      </UserContext.Provider>
+    </Router>
+  )
 }
 
 export default App;

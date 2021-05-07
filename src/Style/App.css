@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+:root {
+  --primayblue-color: #146396;
+  --lightgrey-color: #f7f8f8;
+}
+* {
+  /* Allow to give padding and margin  */
+  box-sizing: border-box;
+  /* remove the default margin and padding of some element */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: poppins, Helvetica, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+ul {
+  list-style-type: none;
+}
+
+/* flex box  */
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+}
+
+/* grid  */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  /* align items horizantallu and vertically  */
+  justify-content: center;
+  align-items: left;
+  /* make height with 100% to parent   */
+  height: 100%;
+}

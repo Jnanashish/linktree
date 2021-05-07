@@ -1,0 +1,48 @@
+.resource.grid {
+  grid-template-columns: 8% 92%;
+  justify-items: start;
+}
+.resource a {
+  justify-self: start;
+}
+.link {
+  background-color: var(--primayblue-color);
+  padding: 8px 10px;
+  margin: 8px auto;
+  border-radius: 5px;
+  line-height: 1.4;
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+.link:hover {
+  transform: scale(0.99);
+}
+.container {
+  /* background-color: var(--lightgrey-color); */
+  box-shadow: 0px 3px 5px 1px rgba(50, 50, 93, 0.25);
+  border-radius: 5px;
+  max-width: 600px;
+  padding: 10px;
+  margin: 20px auto;
+}
+h3 {
+  font-weight: 500;
+}
+.fas,
+.fab {
+  color: #fff;
+  margin-left: 15px;
+}
+
+@media (min-width: 401px) {
+  .resource .grid {
+    grid-template-columns: 20% 70%;
+    gap: 30px;
+  }
+  .resource i {
+    text-align: right;
+  }
+  .resource a {
+    text-align: left;
+  }
+}

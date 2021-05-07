@@ -1,0 +1,49 @@
+.header,
+.grid {
+  grid-template-columns: 1fr 2fr 0.5fr;
+  justify-items: start;
+}
+.header {
+  margin: 10px auto;
+  justify-self: start;
+}
+.logo {
+  max-width: 70px;
+  justify-self: end;
+}
+.header-text {
+  line-height: 1.4;
+  font-family: poppins;
+}
+.header-text h1 {
+  font-size: 20px;
+  margin: 0px auto;
+}
+
+/* Laptop view  */
+
+@media (min-width: 401px) {
+  .header-text {
+    text-align: left;
+  }
+  .header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  /* nav bar for laptop */
+  .nav-bar {
+    max-width: 90%;
+    background-color: #f7f8f8;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+  .nav-bar a {
+    color: #0e1e25;
+    font-weight: 500;
+  }
+  .nav-bar a:hover,
+  .nav-bar a:active {
+    padding-bottom: 3px;
+    border-bottom: 1.8px solid #146396;
+  }
+}
