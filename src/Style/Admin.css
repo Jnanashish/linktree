@@ -1,0 +1,39 @@
+.box {
+  margin: 10px auto;
+  width: 100%;
+}
+h2 {
+  color: royalblue;
+}
+/*  group all form element together */
+.con {
+  margin: 10px auto;
+  max-width: 60%;
+  padding: 10px;
+
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+/* Input box  */
+.inp {
+  text-align: left;
+}
+
+/* type of link checking radio button  */
+.radio {
+  max-width: 500px;
+}
+.radioButton {
+  width: 40px;
+}
+
+/* Container holding the links */
+.adminLink {
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 92%;
+  border: 2px solid #000;
+  border-radius: 5px;
+}

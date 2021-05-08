@@ -1,0 +1,29 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-column-gap: 10px;
+  background-color: aquamarine;
+  margin: 10px auto;
+  padding: 10px;
+}
+.grid-item {
+  text-align: left;
+}
+.grid-item button {
+  align-self: center;
+  background-color: red;
+  width: 100px;
+  padding: 10px;
+  margin: auto 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.update-form,
+TextField {
+  text-align: left;
+}
+.update-form .submit-button {
+  padding: 10px;
+  float: right;
+}
