@@ -13,6 +13,8 @@ import "firebase/auth"
 import Admin from "./Pages/Admin"
 import Signin from "./Pages/Signin"
 import Home from "./Pages/Home"
+import Resource from "../src/Components/Resource"
+
 
 // Main style
 import "./Style/App.css"
@@ -28,6 +30,7 @@ const App = () =>{
           <Route exact path = "/" component={Home}/>
           <Route exact path = "/admin" component={Admin}/>
           <Route exact path = "/signin" component={Signin}/>
+          <Route exact path = "/res" component={Resource}/>
           <Route exact path = "*" component={Home}/>
         </Switch>
       </UserContext.Provider>

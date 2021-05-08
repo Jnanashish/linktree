@@ -15,7 +15,7 @@ const Links = (props) => {
     },[])  // blank to run only on first time
 
     const getdetails = () =>{
-        const linkref = firebase.database().ref('links');
+        const linkref = firebase.database().ref('udemy');
         linkref.on("value", snapshot =>{
             if(snapshot.val() != null)
                 setLinks({
@@ -26,7 +26,7 @@ const Links = (props) => {
 
     return ( 
             <section className="resource container">
-            <h3>Links</h3>
+            <h3>Best Udemy Courses</h3>
             {Object.keys(links).map(id => {
                 return(
                     <div className="link grid">
@@ -40,5 +40,3 @@ const Links = (props) => {
 }
 
 export default Links;
-
-

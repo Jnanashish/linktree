@@ -26,7 +26,7 @@ const Links = (props) => {
 
     return ( 
             <section className="resource container">
-            <h3>Links</h3>
+            <h3>Featured Links</h3>
             {Object.keys(links).map(id => {
                 return(
                     <div className="link grid">
@@ -40,5 +40,4 @@ const Links = (props) => {
 }
 
 export default Links;
-
 

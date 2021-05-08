@@ -29,8 +29,9 @@ const Admin = () =>{
     // state to store all the links data
     const [name, setName] = useState('');
     const [link, setLink] = useState('');
-    
-    const [icon, setIcon] = useState('Dara');
+
+    const [icon, setIcon] = useState(''); // icon for website 
+    const [type, setType] = useState(''); // domain of udemy course
     // store all the list of links received from database
     const [links, setLinks] = useState({})
 
@@ -53,24 +54,20 @@ const Admin = () =>{
     const addDetails = (e) =>{
         e.preventDefault();
         try { 
-            db.database().ref('featured/' + v4()).set({name, link, icon})   
-            // flag === "addDetails" && db.database().ref('links/' + v4()).set({name, link})
+            flag === "link" && db.database().ref('links/' + v4()).set({name, link, icon})
+            flag === "featured" && db.database().ref('featured/' + v4()).set({name, link})   
+            flag === "udemy" && db.database().ref('udemy/' + v4()).set({name, link,icon,type})   
             
         } catch (error) { console.log(error);}
         setName('');
         setLink('');
     }
+    // set the flag acc to value of radio button
     const [flag, setFlag] = useState('');
     const onChangeValue = (event) => {
-        console.log(event.target.value);
         setFlag(event.target.value);
-        console.log(name);
-        console.log(link);
     }
-    const handleSubmit = () =>{
-        console.log("called");
-        if(flag === 'addDetails') {console.log("erstdytufkyigguikfuydjrt");};
-    }
+
     // check if user is admin or loged in 
     // if (!context.user?.email) {
     //     return <Redirect to="/" />;
@@ -80,35 +77,43 @@ const Admin = () =>{
         <div className="box">
         <h2>Admin Panel</h2>
         <form className="con">
-            <TextField className="inp"
-                id="standard-basic" 
-                label="Details"
+            <TextField className="inp" id="standard-basic" label="Details" 
                 value = {name}
                 onChange={(e) => setName(e.target.value)}
             />
-            <TextField className="inp"
-                id="standard-basic" 
-                label="Link" 
+            <TextField className="inp" id="standard-basic" label="Link" 
                 value = {link}
                 onChange={(e) => setLink(e.target.value)}
             />
+            {/* icon input field only for link and udemy  */}
+            {(flag === "link" || flag ==="udemy") 
+                && <TextField className="inp" id="standard-basic" label="Icon name" 
+                value = {icon}
+                onChange={(e) => setIcon(e.target.value)}
+            />}
+            {/* type input field only for udemy  */}
+            {flag === "udemy"  && <TextField className="inp" id="standard-basic" label="Type of course" 
+                value = {type}
+                onChange={(e) => setType(e.target.value)}
+            />}
             {/* Radio button to check the type of link  */}
             <FormControl className="radioGroup" component="fieldset">
               <FormLabel component="legend"><h3>Select the type of Link</h3></FormLabel>
               <RadioGroup onChange={onChangeValue} className="radio" aria-label="gender" name="gender1">
-                <FormControlLabel className="radioButton"  value="addDetails" control={<Radio />} label="Link" />
-                <FormControlLabel className="radioButton"  value="addDefwtails" control={<Radio />} label="Featured" />
-                <FormControlLabel className="radioButton"  value="addDefwwftails" control={<Radio />} label="Udemy" />
+                <FormControlLabel className="radioButton"  value="link" control={<Radio />} label="Link" />
+                <FormControlLabel className="radioButton"  value="featured" control={<Radio />} label="Featured" />
+                <FormControlLabel className="radioButton"  value="udemy" control={<Radio />} label="Udemy" />
               </RadioGroup>
             </FormControl>
-
-            
+    
             <Button
                 type="submit"
                 variant="contained"
                 onClick={addDetails}
             >Add Link</Button>
         </form>
+
+        {/* print the link  */}
         <div className="adminLink">
             <h2>Links</h2>
             {Object.keys(links).map(id => {
