@@ -26,16 +26,17 @@ const Links = (props) => {
 
     return ( 
             <section className="resource container">
-            <h3>Links</h3>
+            <h3>Links 🔥</h3>
             {Object.keys(links).map(id => {
                 return(
-                    <div className="link grid">
-                        <i className="fas fa-robot"></i>
+                    <div className="link left">
                         <a href="{links[id].link}">{links[id].name}</a>
                     </div>
                 )
             })}
             </section>
+
+
     )   
 }
 

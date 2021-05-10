@@ -19,8 +19,9 @@ const Web = () =>{
         })
     }
     return(
-        <div className="container">  
-            <h1>Web development</h1> 
+        <div className="view">  
+            <h2>Web development</h2> 
+            <hr />
             {Object.keys(links).map(id => {
                 if(links[id].domain==="web"){return(
                     <div className="card">

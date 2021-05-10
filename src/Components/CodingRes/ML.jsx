@@ -19,8 +19,8 @@ const Web = () =>{
         })
     }
     return(
-        <div className="container">    
-            <h1>Machine Learning</h1> 
+        <div className="view">    
+            <h2>Machine Learning</h2> 
             {Object.keys(links).map(id => {
                 if(links[id].domain==="ML"){return(
                     <div className="card">

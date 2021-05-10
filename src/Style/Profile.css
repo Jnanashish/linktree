@@ -19,7 +19,22 @@
   font-size: 20px;
   margin: 0px auto;
 }
-
+/* for mobile  */
+@media (max-width: 400px) {
+  .header,
+  .grid .header-text {
+    display: block;
+  }
+  .header p {
+    display: none;
+  }
+  .header-text h1 {
+    font-weight: 500;
+  }
+  .nav-bar {
+    display: none;
+  }
+}
 /* Laptop view  */
 
 @media (min-width: 401px) {

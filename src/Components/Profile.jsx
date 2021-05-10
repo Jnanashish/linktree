@@ -1,3 +1,4 @@
+// top section that contain about profile info
 import React from 'react'
 
 // image
@@ -14,7 +15,7 @@ const Profile = () => {
         <img className="logo" src={logo} alt="logo"/>
         <div className="header-text">
             <h1>@thecodergeek</h1>
-            <p>Get coding resources, ebooks, competitive programmibg group. Join us in other community platform</p>
+            <p>Get The best Programming Courses, Books, Videos. Join our community .</p>
         </div>
     </header>
     
@@ -27,7 +28,6 @@ const Profile = () => {
             <li><a href="/ml">Machine Learning</a></li>
         </ul>
     </section>
-
     </div>
     )
 }

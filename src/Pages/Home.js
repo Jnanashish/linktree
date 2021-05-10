@@ -5,8 +5,7 @@ import Links from "../Components/Links"
 import Profile from "../Components/Profile"
 import Algoexpert from '../Components/Algoexpert';
 import Featured from "../Components/Featured";
-import Amazon from '../Components/Amazon';
-import Carousel from '../Components/Carousel';
+import Resources from '../Components/Resources';
 
 const Home= () => {
     return (
@@ -14,8 +13,7 @@ const Home= () => {
             <Profile/>
             <Featured/>
             <Links/>
-            {/* <Amazon/> */}
-            {/* <Carousel/> */}
+            <Resources/>
             <Algoexpert/>
         </div>
     )

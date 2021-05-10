@@ -3,7 +3,7 @@ import React,{useState} from "react";
 // react-router
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
-// context
+// context to handle if admin is login or not
 import { UserContext } from "./context/UserContext"
 
 //firebase
@@ -19,7 +19,6 @@ import CP from "./Components/CodingRes/CP";
 
 // Main style
 import "./Style/App.css"
-
 
 const App = () =>{
   // state for user
