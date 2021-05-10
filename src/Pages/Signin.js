@@ -9,10 +9,6 @@ import {Redirect} from "react-router-dom"
 // context
 import {UserContext} from "../context/UserContext"
 
-
-// jhandique1999@gmail.com
-// J2handique@
-
 const Signin = () =>{
     const context = useContext(UserContext);
 

@@ -13,11 +13,13 @@ import "firebase/auth"
 import Admin from "./Pages/Admin"
 import Signin from "./Pages/Signin"
 import Home from "./Pages/Home"
-import Resource from "../src/Components/Resource"
-
+import Web from "./Components/CodingRes/Web";
+import ML from "./Components/CodingRes/ML";
+import CP from "./Components/CodingRes/CP";
 
 // Main style
 import "./Style/App.css"
+
 
 const App = () =>{
   // state for user
@@ -30,7 +32,9 @@ const App = () =>{
           <Route exact path = "/" component={Home}/>
           <Route exact path = "/admin" component={Admin}/>
           <Route exact path = "/signin" component={Signin}/>
-          <Route exact path = "/res" component={Resource}/>
+          <Route exact path = "/web" component={Web}/>
+          <Route exact path = "/cp" component={CP}/>
+          <Route exact path = "/ml" component={ML}/>
           <Route exact path = "*" component={Home}/>
         </Switch>
       </UserContext.Provider>

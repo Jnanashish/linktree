@@ -30,7 +30,7 @@ const Links = (props) => {
             {Object.keys(links).map(id => {
                 return(
                     <div className="link grid">
-                        <i class="{links[id].icon}"></i>
+                        <i className="fas fa-robot"></i>
                         <a href="{links[id].link}">{links[id].name}</a>
                     </div>
                 )

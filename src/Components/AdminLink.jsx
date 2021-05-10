@@ -19,7 +19,7 @@ const AdminLink = (props) => {
 
   // function to update link
   const updateLink = ()=>{
-    const linkRef = firebase.database().ref('links').child(props.id)
+    const linkRef = firebase.database().ref('props.type').child(props.id)
     linkRef.update({
       link: newlink,
       name: newname,

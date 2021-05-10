@@ -21,10 +21,10 @@ const Profile = () => {
     {/* Navbar only for laptop view  */}
     <section class="nav-bar">
         <ul class="flex">
-            <li><a href="#">Home</a></li>
-            <li><a href="webdev.html">Web development</a></li>
-            <li><a href="#">Competitive Programming</a></li>
-            <li><a href="#">Machine Learning</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/web">Web development</a></li>
+            <li><a href="/cp">Competitive Programming</a></li>
+            <li><a href="/ml">Machine Learning</a></li>
         </ul>
     </section>
 

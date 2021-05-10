@@ -19,7 +19,7 @@ import {UserContext} from "../context/UserContext"
 import {Redirect} from "react-router-dom"
 
 // component
-import AdminLink from "../Components/AdminLinks"
+import AdminLink from "../Components/AdminLink"
 
 // css
 import "../Style/Admin.css"
@@ -34,30 +34,41 @@ const Admin = () =>{
     const [type, setType] = useState(''); // domain of udemy course
     // store all the list of links received from database
     const [links, setLinks] = useState({})
+    const [featured, setFeatured] = useState({})   // featured link
+
+    // resource
+    const [instructor, setInstructor] = useState('');
+    const [provider, setProvider] = useState('');
+    const [price, setPrice] = useState('');
+    const [domain, setDomain] = useState('');
+
 
     useEffect(()=>{
-        getdetails();
+        getlinks(); getfeatured();
     },[])  // blank to run only on first time
 
     // function to receive the details from firebase
-    const getdetails = () =>{
+    const getlinks = () =>{
         const linkref = firebase.database().ref('links');
         linkref.on("value", snapshot =>{
-            if(snapshot.val() != null)
-                setLinks({
-                    ...snapshot.val()
-                })
+            if(snapshot.val() != null) setLinks({...snapshot.val()})
         })
     }
-
+    // receive all the featured link data
+    const getfeatured = () =>{
+        const linkref = firebase.database().ref('featured');
+        linkref.on("value", snapshot =>{
+            if(snapshot.val() != null) setFeatured({...snapshot.val()})
+        })
+    }
     // function to add the details
     const addDetails = (e) =>{
         e.preventDefault();
         try { 
-            flag === "link" && db.database().ref('links/' + v4()).set({name, link, icon})
-            flag === "featured" && db.database().ref('featured/' + v4()).set({name, link})   
-            flag === "udemy" && db.database().ref('udemy/' + v4()).set({name, link,icon,type})   
-            
+            flag === "link" && db.database().ref('links/' + v4()).set({name, link, icon})   //link 
+            flag === "featured" && db.database().ref('featured/' + v4()).set({name, link})  // featured link  
+            flag === "udemy" && db.database().ref('udemy/' + v4()).set({name, link,icon,type})  //udemy link    
+            flag === "resource" && db.database().ref('resource/' + v4()).set({name, link,domain, instructor, price,provider})  //udemy link    
         } catch (error) { console.log(error);}
         setName('');
         setLink('');
@@ -96,13 +107,34 @@ const Admin = () =>{
                 value = {type}
                 onChange={(e) => setType(e.target.value)}
             />}
+            {(flag === "resource") 
+                && <TextField className="inp" id="standard-basic" label="Instructor" 
+                value = {instructor}
+                onChange={(e) => setInstructor(e.target.value)}
+                />}
+            {(flag === "resource") 
+                && <TextField className="inp" id="standard-basic" label="Domain" 
+                value = {domain}
+                onChange={(e) => setDomain(e.target.value)}
+            />}
+            {(flag === "resource") 
+                && <TextField className="inp" id="standard-basic" label="Price" 
+                value = {price}
+                onChange={(e) => setPrice(e.target.value)}
+            />}
+            {(flag === "resource") 
+                && <TextField className="inp" id="standard-basic" label="Provider" 
+                value = {provider}
+                onChange={(e) => setProvider(e.target.value)}
+            />}
             {/* Radio button to check the type of link  */}
             <FormControl className="radioGroup" component="fieldset">
               <FormLabel component="legend"><h3>Select the type of Link</h3></FormLabel>
               <RadioGroup onChange={onChangeValue} className="radio" aria-label="gender" name="gender1">
                 <FormControlLabel className="radioButton"  value="link" control={<Radio />} label="Link" />
                 <FormControlLabel className="radioButton"  value="featured" control={<Radio />} label="Featured" />
-                <FormControlLabel className="radioButton"  value="udemy" control={<Radio />} label="Udemy" />
+                <FormControlLabel className="radioButton"  value="resource" control={<Radio />} label="Resources" />
+                {/* <FormControlLabel className="radioButton"  value="udemy" control={<Radio />} label="Udemy" /> */}
               </RadioGroup>
             </FormControl>
     
@@ -118,6 +150,15 @@ const Admin = () =>{
             <h2>Links</h2>
             {Object.keys(links).map(id => {
                 const temp = links[id]
+                return(
+                    <div>
+                        <AdminLink key={id} link = {temp} id = {id}/>
+                    </div>
+                )
+            })}
+            <h2>Featured Links</h2>
+            {Object.keys(featured).map(id => {
+                const temp = featured[id]
                 return(
                     <div>
                         <AdminLink key={id} link = {temp} id = {id} />
