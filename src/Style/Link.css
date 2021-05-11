@@ -38,7 +38,9 @@ h3 {
   margin-top: 3px;
   margin-left: 15px;
 }
-
+.featured .link {
+  background-color: #0a2540;
+}
 @media (max-width: 400px) {
   .resource .grid {
     grid-template-columns: 5% 95%;

@@ -113,17 +113,17 @@ const Admin = () =>{
                 onChange={(e) => setInstructor(e.target.value)}
                 />}
             {(flag === "resource") 
-                && <TextField className="inp" id="standard-basic" label="Domain" 
+                && <TextField className="inp" id="standard-basic" label="Domain : Type web, ml, cp" 
                 value = {domain}
                 onChange={(e) => setDomain(e.target.value)}
             />}
             {(flag === "resource") 
-                && <TextField className="inp" id="standard-basic" label="Price" 
+                && <TextField className="inp" id="standard-basic" label="Price : Either Free or Paid" 
                 value = {price}
                 onChange={(e) => setPrice(e.target.value)}
             />}
             {(flag === "resource") 
-                && <TextField className="inp" id="standard-basic" label="Provider" 
+                && <TextField className="inp" id="standard-basic" label="Provider : Udemy etc" 
                 value = {provider}
                 onChange={(e) => setProvider(e.target.value)}
             />}
@@ -134,7 +134,6 @@ const Admin = () =>{
                 <FormControlLabel className="radioButton"  value="link" control={<Radio />} label="Link" />
                 <FormControlLabel className="radioButton"  value="featured" control={<Radio />} label="Featured" />
                 <FormControlLabel className="radioButton"  value="resource" control={<Radio />} label="Resources" />
-                {/* <FormControlLabel className="radioButton"  value="udemy" control={<Radio />} label="Udemy" /> */}
               </RadioGroup>
             </FormControl>
     

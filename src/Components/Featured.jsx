@@ -24,7 +24,7 @@ const Links = (props) => {
         })
     }
     return ( 
-            <section className="resource container">
+            <section className="resource featured container">
             <h3>Featured Links 🔥</h3>
             {Object.keys(links).map(id => {
                 return(

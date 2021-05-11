@@ -20,16 +20,19 @@ const Web = () =>{
     }
     return(
         <div className="view">    
-            <h2>Machine Learning</h2> 
+            <h1>Machine Learning</h1> 
+            <h2>✔️ Best Online Course available </h2>
+            <hr />
             {Object.keys(links).map(id => {
-                if(links[id].domain==="ML"){return(
-                    <div className="card">
+                if(links[id].domain==="ml"){return(
                         <a href={links[id].link}>
-                        <span>{links[id].name} </span>
-                        <p>{links[id].provider} , 👩‍🏫 {links[id].instructor} 
-                        <span className="free">{links[id].price}</span>
-                        </p></a>
-                    </div>
+                        <div className="card">
+                            <span className="course-name">{links[id].name} </span>
+                            <p className="detail">{links[id].provider} , 👩‍🏫 {links[id].instructor} </p>
+                            <p className="free">{links[id].price}</p>
+                        </div>
+                        </a>
+
                 )}
             })}             
         </div>

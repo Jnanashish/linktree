@@ -26,7 +26,7 @@ const Links = (props) => {
 
     return ( 
             <section className="resource container">
-            <h3>Links 🔥</h3>
+            <h3>Important Resources</h3>
             {Object.keys(links).map(id => {
                 return(
                     <div className="link left">

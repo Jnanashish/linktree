@@ -16,6 +16,7 @@ import Home from "./Pages/Home"
 import Web from "./Components/CodingRes/Web";
 import ML from "./Components/CodingRes/ML";
 import CP from "./Components/CodingRes/CP";
+import Counter from "./Components/Counter";
 
 // Main style
 import "./Style/App.css"
@@ -34,6 +35,7 @@ const App = () =>{
           <Route exact path = "/web" component={Web}/>
           <Route exact path = "/cp" component={CP}/>
           <Route exact path = "/ml" component={ML}/>
+          <Route exact path = "/count" component={Counter}/>
           <Route exact path = "*" component={Home}/>
         </Switch>
       </UserContext.Provider>
