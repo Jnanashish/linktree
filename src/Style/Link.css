@@ -8,12 +8,13 @@
 .link {
   max-width: 500px;
   background-color: var(--primayblue-color);
-  padding: 8px 10px;
+  padding: 7px 10px;
   margin: 8px auto;
   border-radius: 5px;
   line-height: 1.4;
   font-size: 1.1rem;
   transition: transform 0.2s;
+  font-weight: 400;
 }
 .link:hover {
   transform: scale(0.99);
@@ -40,6 +41,42 @@ h3 {
 }
 .featured .link {
   background-color: #0a2540;
+}
+/* section holding link to various resourtce mobile only  */
+.hide .link {
+  background: linear-gradient(
+    to right,
+    rgba(31, 188, 149, 0.53),
+    rgba(131, 197, 200, 0.3),
+    rgba(131, 197, 200, 0.1)
+  );
+  font-size: 1.08rem;
+  margin: 6px auto;
+  display: grid;
+  grid-template-columns: 5% 83% 5%;
+  gap: 10px;
+}
+.hide .fas,
+.fab {
+  grid-column: 1;
+  grid-row: 1;
+  color: #000;
+  margin-top: 5px;
+  font-size: 15px;
+  margin-left: 0px;
+}
+.hide a {
+  grid-column: 2;
+  grid-row: 1;
+  color: #000;
+  font-weight: 450;
+  text-align: left;
+}
+.hide .fa-chevron-right {
+  grid-column: 3;
+  grid-row: 1;
+  float: right;
+  margin-right: 10px;
 }
 @media (max-width: 400px) {
   .resource .grid {

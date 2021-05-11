@@ -4,7 +4,7 @@
   justify-items: start;
 }
 .header {
-  margin: 10px auto;
+  margin: 10px auto 0px auto;
   justify-self: start;
 }
 .logo {
@@ -43,7 +43,7 @@
   }
   .header {
     margin-top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   /* nav bar for laptop */
   .nav-bar {

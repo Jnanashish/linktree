@@ -1,6 +1,6 @@
 .container {
   max-width: 600px;
-  margin: 20px auto;
+  margin: 5px auto;
   border-radius: 0px;
 }
 :root {
@@ -72,6 +72,18 @@ span:hover {
     margin: 20px auto;
     max-width: 600px;
     box-shadow: none;
+  }
+  .view h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: left;
+    color: #0068ff;
+    font-weight: 550;
+    margin: 0 10px 5px 10px;
+  }
+  .view h1 {
+    margin-bottom: 10px;
+    font-size: 25px;
   }
   .card {
     padding: 10px 10px;

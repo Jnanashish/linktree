@@ -12,8 +12,8 @@ import {UserContext} from "../context/UserContext"
 const Signin = () =>{
     const context = useContext(UserContext);
 
-    const [email, setEmail] = useState("jhandique1999@gmail.com");
-    const [password, setPassword] = useState("J2handique@");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     
     const handleSignin = () =>{
         firebase
