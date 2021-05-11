@@ -21,7 +21,7 @@ const Web = () =>{
     return(
         <div className="view">  
             <h1>Web development</h1> 
-            <h2>✔️ Best Online Courses</h2>
+            <h2>Best Online Courses 🔥</h2>
             <hr/>
             {Object.keys(links).map(id => {
                 if(links[id].domain==="web"){return(

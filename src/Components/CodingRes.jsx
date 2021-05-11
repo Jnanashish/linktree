@@ -5,7 +5,7 @@ import firebase from "firebase/app";
 // css
 import "../../Style/Resource.css"
 
-const Web = () =>{
+const CodingRes = (props) =>{
     const [links, setLinks] = useState({});
     useEffect(()=>{ getdetails();},[])   //load the links at first
 
@@ -19,12 +19,12 @@ const Web = () =>{
         })
     }
     return(
-        <div className="view">    
-            <h1>Machine Learning</h1> 
-            <h2>Best Online Course 🔥</h2>
-            <hr />
+        <div className="view">  
+            <h1>{props.name}</h1> 
+            <h2>Best Online Courses 🔥</h2>
+            <hr/>
             {Object.keys(links).map(id => {
-                if(links[id].domain==="ml"){return(
+                if(links[id].domain==="{props.domain}"){return(
                         <a href={links[id].link}>
                         <div className="card">
                             <span className="course-name">{links[id].name} </span>
@@ -34,9 +34,9 @@ const Web = () =>{
                         </a>
 
                 )}
-            })}             
+            })}            
         </div>
     )
 }
 
-export default Web;
+export default CodingRes;
