@@ -7,7 +7,9 @@
 }
 .link {
   max-width: 500px;
-  background-color: var(--primayblue-color);
+  /* background-color: var(--primayblue-color); */
+  background-color: rgb(241, 242, 246);
+  /* color: #000; */
   padding: 7px 10px;
   margin: 8px auto;
   border-radius: 5px;
@@ -21,6 +23,27 @@
 }
 .resource .left {
   text-align: left;
+}
+.left {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  gap: 10px;
+}
+.left .fas {
+  color: #0a2540;
+  grid-column: 1;
+  grid-row: 1;
+  margin-left: 0px;
+  /* justify-self: center; */
+  align-self: center;
+}
+.left a {
+  grid-column: 2;
+  grid-row: 1;
+  font-weight: 410;
+  font-size: 20px;
+  color: #0a2540;
+  font-family: "Source Sans Pro", sans-serif;
 }
 .container {
   /* background-color: var(--lightgrey-color); */
@@ -69,8 +92,11 @@ h3 {
   grid-column: 2;
   grid-row: 1;
   color: #000;
-  font-weight: 450;
+  font-weight: 400;
   text-align: left;
+}
+.left a {
+  color: #000;
 }
 .hide .fa-chevron-right {
   grid-column: 3;

@@ -21,8 +21,13 @@ const Web = () =>{
     }
     return(
         <div>
-        <div className="view">    
+        <div className="res-header">
             <h1>Machine Learning</h1> 
+            <div className="res-home">
+                <a href="/"><span>Home</span><i class="fas fa-home"></i></a>
+            </div>  
+        </div> 
+        <div className="view">    
             <h2>Best Online Course 🔥</h2>
             <hr />
             {Object.keys(links).map(id => {

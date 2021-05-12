@@ -33,8 +33,13 @@ const Web = () =>{
     }
     return(
         <div>
-        <div className="view">  
+        <div className="res-header">
             <h1>Web development</h1> 
+            <div className="res-home">
+                <a href="/"><span>Home</span><i class="fas fa-home"></i></a>
+            </div>  
+        </div> 
+        <div className="view"> 
             <h2>Best Online Courses 🔥</h2>
             <hr/>
             {Object.keys(links).map(id => {
@@ -52,14 +57,13 @@ const Web = () =>{
         </div>
         {/* Important website  */}
         <div className="view">
-            <h2>Must Visited website for Web developer</h2>
+            <h2>Must Visited website </h2>
             <hr />
             {Object.keys(website).map(id => {
                 if(website[id].domain==="web"){return(
                     <a href={website[id].link}>
                         <div className="card web-card">
-                            <p className="web-link">{website[id].link}</p>
-                            <p className="web-name">{website[id].name}</p>
+                            <p><span className="web-link">{website[id].link} </span>: {website[id].name}</p>
                         </div>  
                     </a>
                 )}

@@ -97,9 +97,9 @@ const Admin = () =>{
     }
 
     // check if user is admin or loged in 
-    // if (!context.user?.email) {
-    //     return <Redirect to="/" />;
-    // }
+    if (!context.user?.email) {
+        return <Redirect to="/" />;
+    }
 
     return(
         <div className="box">

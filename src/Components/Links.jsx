@@ -30,6 +30,7 @@ const Links = (props) => {
             {Object.keys(links).map(id => {
                 return(
                     <div className="link left">
+                        <i class="fas fa-hand-point-right"></i>
                         <a href="{links[id].link}">{links[id].name}</a>
                     </div>
                 )
