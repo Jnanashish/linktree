@@ -2,10 +2,12 @@
 import react,{useState, useEffect} from "react";
 import firebase from "firebase/app";
 
+import Footer from "../Footer.jsx"
+
 // css
 import "../../Style/Resource.css"
 
-const Web = () =>{
+const CP = () =>{
     const [links, setLinks] = useState({});
     useEffect(()=>{ getdetails();},[])   //load the links at first
 
@@ -19,6 +21,7 @@ const Web = () =>{
         })
     }
     return(
+        <div>
         <div className="view">  
             <h1>Competitve Programming</h1> 
             <h2>Best Online Course 🔥</h2>
@@ -34,9 +37,12 @@ const Web = () =>{
                         </a>
 
                 )}
-            })}             
+            })} 
+                       
+        </div>
+        <Footer/> 
         </div>
     )
 }
 
-export default Web;
+export default CP;

@@ -2,12 +2,16 @@
 import react,{useState, useEffect} from "react";
 import firebase from "firebase/app";
 
+// 
+import Footer from "../Footer.jsx";
+
 // css
 import "../../Style/Resource.css"
 
 const Web = () =>{
     const [links, setLinks] = useState({});
-    useEffect(()=>{ getdetails();},[])   //load the links at first
+    const [website, setWebsite] = useState({});  // to store the website links
+    useEffect(()=>{ getdetails(); getwebsite();},[])   //load the links at first
 
     const getdetails = () =>{
         const linkref = firebase.database().ref('resource');
@@ -18,7 +22,17 @@ const Web = () =>{
                 })
         })
     }
+    const getwebsite = () =>{
+        const linkref = firebase.database().ref('website');
+        linkref.on("value", snapshot =>{
+            if(snapshot.val() != null)
+                setWebsite({
+                    ...snapshot.val()
+                })
+        })
+    }
     return(
+        <div>
         <div className="view">  
             <h1>Web development</h1> 
             <h2>Best Online Courses 🔥</h2>
@@ -35,6 +49,24 @@ const Web = () =>{
 
                 )}
             })}            
+        </div>
+        {/* Important website  */}
+        <div className="view">
+            <h2>Must Visited website for Web developer</h2>
+            <hr />
+            {Object.keys(website).map(id => {
+                if(website[id].domain==="web"){return(
+                    <a href={website[id].link}>
+                        <div className="card web-card">
+                            <p className="web-link">{website[id].link}</p>
+                            <p className="web-name">{website[id].name}</p>
+                        </div>  
+                    </a>
+                )}
+            })}
+
+        </div>
+        <Footer/>
         </div>
     )
 }

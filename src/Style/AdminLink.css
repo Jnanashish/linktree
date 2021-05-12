@@ -4,24 +4,28 @@
   grid-column-gap: 10px;
   background-color: aquamarine;
   margin: 10px auto;
-  padding: 10px;
+  padding: 7px 10px;
 }
 .grid-item {
+  color: #000;
   text-align: left;
+  font-size: 13px;
 }
 .grid-item button {
   align-self: center;
   background-color: red;
-  width: 100px;
-  padding: 10px;
-  margin: auto 5px;
+  width: 90px;
+  padding: 7px;
+  margin: 8px 5px;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .update-form,
 TextField {
   text-align: left;
+  color: #fff;
 }
 .update-form .submit-button {
   padding: 10px;

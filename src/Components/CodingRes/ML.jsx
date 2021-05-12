@@ -4,6 +4,7 @@ import firebase from "firebase/app";
 
 // css
 import "../../Style/Resource.css"
+import Footer from "../Footer";
 
 const Web = () =>{
     const [links, setLinks] = useState({});
@@ -19,6 +20,7 @@ const Web = () =>{
         })
     }
     return(
+        <div>
         <div className="view">    
             <h1>Machine Learning</h1> 
             <h2>Best Online Course 🔥</h2>
@@ -35,6 +37,8 @@ const Web = () =>{
 
                 )}
             })}             
+        </div>
+        <Footer/>
         </div>
     )
 }

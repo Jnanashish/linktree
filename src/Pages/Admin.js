@@ -35,6 +35,8 @@ const Admin = () =>{
     // store all the list of links received from database
     const [links, setLinks] = useState({})
     const [featured, setFeatured] = useState({})   // featured link
+    const [resource, setResource] = useState({})   // Resource link
+    const [website, setWebsite] = useState({})   // Resource link
 
     // resource
     const [instructor, setInstructor] = useState('');
@@ -44,7 +46,7 @@ const Admin = () =>{
 
 
     useEffect(()=>{
-        getlinks(); getfeatured();
+        getlinks(); getfeatured(); getresource(); getwebsite();
     },[])  // blank to run only on first time
 
     // function to receive the details from firebase
@@ -61,6 +63,20 @@ const Admin = () =>{
             if(snapshot.val() != null) setFeatured({...snapshot.val()})
         })
     }
+    // get the all the course links
+    const getresource = () =>{
+        const linkref = firebase.database().ref('resource');
+        linkref.on("value", snapshot =>{
+            if(snapshot.val() != null) setResource({...snapshot.val()})
+        })
+    }
+    // get all the website for resource section
+    const getwebsite = () =>{
+        const linkref = firebase.database().ref('website');
+        linkref.on("value", snapshot =>{
+            if(snapshot.val() != null) setWebsite({...snapshot.val()})
+        })
+    }
     // function to add the details
     const addDetails = (e) =>{
         e.preventDefault();
@@ -69,6 +85,7 @@ const Admin = () =>{
             flag === "featured" && db.database().ref('featured/' + v4()).set({name, link})  // featured link  
             flag === "udemy" && db.database().ref('udemy/' + v4()).set({name, link,icon,type})  //udemy link    
             flag === "resource" && db.database().ref('resource/' + v4()).set({name, link,domain, instructor, price,provider})  //udemy link    
+            flag === "website" && db.database().ref('website/' + v4()).set({name, link, domain})  //imp websites   
         } catch (error) { console.log(error);}
         setName('');
         setLink('');
@@ -80,9 +97,9 @@ const Admin = () =>{
     }
 
     // check if user is admin or loged in 
-    if (!context.user?.email) {
-        return <Redirect to="/" />;
-    }
+    // if (!context.user?.email) {
+    //     return <Redirect to="/" />;
+    // }
 
     return(
         <div className="box">
@@ -103,7 +120,8 @@ const Admin = () =>{
                 onChange={(e) => setIcon(e.target.value)}
             />}
             {/* type input field only for udemy  */}
-            {flag === "udemy"  && <TextField className="inp" id="standard-basic" label="Type of course" 
+            {flag === "udemy"  
+                && <TextField className="inp" id="standard-basic" label="Type of course" 
                 value = {type}
                 onChange={(e) => setType(e.target.value)}
             />}
@@ -112,7 +130,7 @@ const Admin = () =>{
                 value = {instructor}
                 onChange={(e) => setInstructor(e.target.value)}
                 />}
-            {(flag === "resource") 
+            {(flag === "resource" || flag === "website") 
                 && <TextField className="inp" id="standard-basic" label="Domain : Type web, ml, cp" 
                 value = {domain}
                 onChange={(e) => setDomain(e.target.value)}
@@ -134,6 +152,7 @@ const Admin = () =>{
                 <FormControlLabel className="radioButton"  value="link" control={<Radio />} label="Link" />
                 <FormControlLabel className="radioButton"  value="featured" control={<Radio />} label="Featured" />
                 <FormControlLabel className="radioButton"  value="resource" control={<Radio />} label="Resources" />
+                <FormControlLabel className="radioButton"  value="website" control={<Radio />} label="Website" />
               </RadioGroup>
             </FormControl>
     
@@ -151,7 +170,7 @@ const Admin = () =>{
                 const temp = links[id]
                 return(
                     <div>
-                        <AdminLink key={id} link = {temp} id = {id}/>
+                        <AdminLink key={id} type={'links'} link = {temp} id = {id}/>
                     </div>
                 )
             })}
@@ -160,7 +179,25 @@ const Admin = () =>{
                 const temp = featured[id]
                 return(
                     <div>
-                        <AdminLink key={id} link = {temp} id = {id} />
+                        <AdminLink key={id} type={'featured'} link = {temp} id = {id} />
+                    </div>
+                )
+            })}
+            <h2>Courses on resource Section</h2>
+            {Object.keys(resource).map(id => {
+                const temp = resource[id]
+                return(
+                    <div>
+                        <AdminLink key={id} type={'resource'} link = {temp} id = {id} />
+                    </div>
+                )
+            })}
+            <h2>Important websites</h2>
+            {Object.keys(website).map(id => {
+                const temp = website[id]
+                return(
+                    <div>
+                        <AdminLink key={id} type={'website'} link = {temp} id = {id} />
                     </div>
                 )
             })}

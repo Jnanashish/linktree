@@ -22,6 +22,7 @@
   font-size: 30px;
   text-align: left;
   color: #0068ff;
+  /* color: #0a2540; */
   font-weight: 550;
 }
 /* default link card  */
@@ -67,6 +68,19 @@ span:hover {
   grid-row: 2;
   justify-items: start;
 }
+.web-card {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 5px;
+  padding: 8px 20px;
+  border-bottom: 0.1px solid #e0dddd;
+}
+.web-card .web-link {
+  color: #0068ff;
+}
+.web-card .web-link:hover {
+  text-decoration: underline;
+}
 
 /* mobile view */
 @media (max-width: 400px) {
@@ -77,11 +91,11 @@ span:hover {
   }
   .view h2 {
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 20px;
     text-align: left;
-    color: #0068ff;
-    font-weight: 600;
-    margin: 0 10px 5px 10px;
+    font-weight: 500;
+    margin: 0 0px 5px 10px;
+    width: 90%;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   .view h1 {
@@ -90,6 +104,10 @@ span:hover {
   }
   .card {
     padding: 10px 10px;
+  }
+  .web-card {
+    font-size: 15px;
+    grid-template-columns: 20% 80%;
   }
 }
 /* For laptop */
