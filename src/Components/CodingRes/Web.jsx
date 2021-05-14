@@ -4,6 +4,7 @@ import firebase from "firebase/app";
 
 // 
 import Footer from "../Footer.jsx";
+import Email1 from '../Email1';
 
 // css
 import "../../Style/Resource.css"
@@ -51,7 +52,6 @@ const Web = () =>{
                             <p className="free">{links[id].price}</p>
                         </div>
                         </a>
-
                 )}
             })}            
         </div>
@@ -61,7 +61,7 @@ const Web = () =>{
             <hr />
             {Object.keys(website).map(id => {
                 if(website[id].domain==="web"){return(
-                    <a href={website[id].link}>
+                    <a href={"https://"+ website[id].link}>
                         <div className="card web-card">
                             <p><span className="web-link">{website[id].link} </span>: {website[id].name}</p>
                         </div>  
@@ -70,6 +70,7 @@ const Web = () =>{
             })}
 
         </div>
+        <Email1/>
         <Footer/>
         </div>
     )

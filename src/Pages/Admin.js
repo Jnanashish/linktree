@@ -31,7 +31,6 @@ const Admin = () =>{
     const [link, setLink] = useState('');
 
     const [icon, setIcon] = useState(''); // icon for website 
-    const [type, setType] = useState(''); // domain of udemy course
     // store all the list of links received from database
     const [links, setLinks] = useState({})
     const [featured, setFeatured] = useState({})   // featured link
@@ -83,7 +82,7 @@ const Admin = () =>{
         try { 
             flag === "link" && db.database().ref('links/' + v4()).set({name, link, icon})   //link 
             flag === "featured" && db.database().ref('featured/' + v4()).set({name, link})  // featured link  
-            flag === "udemy" && db.database().ref('udemy/' + v4()).set({name, link,icon,type})  //udemy link    
+            flag === "udemy" && db.database().ref('udemy/' + v4()).set({name, link,icon,domain})  //udemy link    
             flag === "resource" && db.database().ref('resource/' + v4()).set({name, link,domain, instructor, price,provider})  //udemy link    
             flag === "website" && db.database().ref('website/' + v4()).set({name, link, domain})  //imp websites   
         } catch (error) { console.log(error);}
@@ -119,12 +118,6 @@ const Admin = () =>{
                 value = {icon}
                 onChange={(e) => setIcon(e.target.value)}
             />}
-            {/* type input field only for udemy  */}
-            {flag === "udemy"  
-                && <TextField className="inp" id="standard-basic" label="Type of course" 
-                value = {type}
-                onChange={(e) => setType(e.target.value)}
-            />}
             {(flag === "resource") 
                 && <TextField className="inp" id="standard-basic" label="Instructor" 
                 value = {instructor}
@@ -153,6 +146,7 @@ const Admin = () =>{
                 <FormControlLabel className="radioButton"  value="featured" control={<Radio />} label="Featured" />
                 <FormControlLabel className="radioButton"  value="resource" control={<Radio />} label="Resources" />
                 <FormControlLabel className="radioButton"  value="website" control={<Radio />} label="Website" />
+                {/* <FormControlLabel className="radioButton"  value="udemy" control={<Radio />} label="Udemy" /> */}
               </RadioGroup>
             </FormControl>
     

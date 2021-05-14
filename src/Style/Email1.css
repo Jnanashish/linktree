@@ -1,0 +1,167 @@
+.email {
+  max-width: 90%;
+  display: grid;
+  margin: 10px auto;
+  gap: 1px;
+  border: 2px solid #cbcbcb;
+  padding: 5px;
+  row-gap: 5px;
+}
+.email input {
+  padding: 7px 10px;
+  max-width: 500px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  background-color: rgb(241, 242, 246);
+  border: 0px;
+}
+.email .inp-email {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+}
+.email .inp-name {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+}
+.email p {
+  margin-top: 7px;
+  font-size: 16px;
+  margin-bottom: 7px;
+  grid-column: 1/2;
+  grid-row: 1;
+}
+.email input :hover {
+  border-bottom: 2px solid #000;
+  background-color: red;
+}
+.thank {
+  margin-top: 10px;
+}
+.glow-on-hover {
+  /* justify-self: end; */
+  grid-column: 2;
+  grid-row: 3;
+  width: 120px;
+  height: 38px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  left: 425px;
+  z-index: 0;
+  border-radius: 5px;
+  font-size: 15px;
+  /* margin-top: 7px; */
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile {
+    margin-bottom: 0px;
+  }
+  .glow-on-hover {
+    left: 0px;
+    width: 110px;
+    height: 30px;
+    font-size: 15px;
+  }
+  .lp {
+    display: none;
+  }
+  .email .inp-email {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .email .inp-name {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .glow-on-hover {
+    /* justify-self: end; */
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .email {
+    max-width: 100;
+    border: none;
+  }
+  .email p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+@media (min-width: 400px) {
+  .mobile {
+    display: none;
+  }
+  .email {
+    grid-template-columns: 50% 50%;
+  }
+}

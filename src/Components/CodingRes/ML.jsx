@@ -5,16 +5,27 @@ import firebase from "firebase/app";
 // css
 import "../../Style/Resource.css"
 import Footer from "../Footer";
+import Email1 from "../Email1";
 
 const Web = () =>{
     const [links, setLinks] = useState({});
-    useEffect(()=>{ getdetails();},[])   //load the links at first
+    const [website, setWebsite] = useState({});
+    useEffect(()=>{ getdetails(); getwebsite();},[])   //load the links at first
 
     const getdetails = () =>{
         const linkref = firebase.database().ref('resource');
         linkref.on("value", snapshot =>{
             if(snapshot.val() != null)
                 setLinks({
+                    ...snapshot.val()
+                })
+        })
+    }
+    const getwebsite = () =>{
+        const linkref = firebase.database().ref('website');
+        linkref.on("value", snapshot =>{
+            if(snapshot.val() != null)
+                setWebsite({
                     ...snapshot.val()
                 })
         })
@@ -43,6 +54,20 @@ const Web = () =>{
                 )}
             })}             
         </div>
+        <div className="view">
+            <h2>Must Visited website </h2>
+            <hr />
+            {Object.keys(website).map(id => {
+                if(website[id].domain==="ml"){return(
+                    <a href={website[id].link}>
+                        <div className="card web-card">
+                            <p><span className="web-link">{website[id].link} </span>: {website[id].name}</p>
+                        </div>  
+                    </a>
+                )}
+            })}
+        </div>
+        <Email1/>
         <Footer/>
         </div>
     )

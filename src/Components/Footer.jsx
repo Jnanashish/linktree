@@ -8,6 +8,7 @@ const Footer = () =>{
     useEffect(()=>{ pageview();},[]) 
 
     const pageview = () =>{
+        // page view 1 for production
         fetch('https://api.countapi.xyz/update/thecodergeek.co/pageview/?amount=1')
         .then(res => res.json())
         .then((data) => {
@@ -19,7 +20,7 @@ const Footer = () =>{
     return(
         <div className="footer">
             <h3>Total Page view 👁️ {count}</h3>
-            <h3 className="">Made with ❤️ in India by @jsh</h3>
+            <h3>Made with ❤️ in India by @jsh</h3>
         </div>
     )
 }

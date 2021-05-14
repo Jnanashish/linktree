@@ -31,7 +31,7 @@ const Links = (props) => {
                 return(
                     <div className="link left">
                         <i class="fas fa-hand-point-right"></i>
-                        <a href="{links[id].link}">{links[id].name}</a>
+                        <a href={links[id].link}>{links[id].name}</a>
                     </div>
                 )
             })}

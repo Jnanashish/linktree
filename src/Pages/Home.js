@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import Links from "../Components/Links"
 
 // component
@@ -7,6 +7,7 @@ import Algoexpert from '../Components/Algoexpert';
 import Featured from "../Components/Featured";
 import Resources from '../Components/Resources';
 import Footer from '../Components/Footer';
+import Email1 from '../Components/Email1';
 
 const Home= () => {
     return (
@@ -16,6 +17,7 @@ const Home= () => {
             <Links/>
             <Resources/>
             <Algoexpert/>
+            <Email1/>
             <Footer/>
         </div>
     )

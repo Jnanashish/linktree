@@ -29,7 +29,7 @@ const Links = (props) => {
             {Object.keys(links).map(id => {
                 return(
                     <div className="link">
-                        <a href="{links[id].link}">{links[id].name}</a>
+                        <a href={links[id].link}>{links[id].name}</a>
                     </div>
                 )
             })}

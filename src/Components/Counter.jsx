@@ -1,15 +1,15 @@
 import react,{useState, useEffect} from "react";
 
 const Counter = () =>{
-    const [count, setCount] = useState('')
+    const [count, setCount] = useState('0')
     useEffect(()=>{ pageview();},[]) 
 
     const pageview = () =>{
-        fetch('https://api.countapi.xyz/update/thecodergeek.co/pageview/?amount=1')
+        fetch('https://api.countapi.xyz/update/thecodergek.co/pageview1/?amount=1')
         .then(res => res.json())
         .then((data) => {
             console.log(data);
-            setCount(data.value)
+            // setCount(data.value)
         })
     }
     return(
@@ -29,4 +29,4 @@ export default Counter;
 // https://api.countapi.xyz/get/thecodergeek.co/pageview
 
 // increament by 
-// https://api.countapi.xyz/update/thecodergeek.co/pageview/?amount=1
+// https://api.countapi.xyz/update/thecodergeek.co/pageview1/?amount=1
