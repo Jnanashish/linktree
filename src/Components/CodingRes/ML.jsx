@@ -43,7 +43,7 @@ const Web = () =>{
             <hr />
             {Object.keys(links).map(id => {
                 if(links[id].domain==="ml"){return(
-                        <a href={links[id].link}>
+                        <a href={"https://"+links[id].link}>
                         <div className="card">
                             <span className="course-name">{links[id].name} </span>
                             <p className="detail">{links[id].provider} , 👩‍🏫 {links[id].instructor} </p>

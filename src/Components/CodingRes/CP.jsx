@@ -34,7 +34,7 @@ const CP = () =>{
     return(
         <div>
         <div className="res-header">
-            <h1>Competitive Programming</h1> 
+            <h1>Data Structures & Algorithms</h1> 
             <div className="res-home">
                 <a href="/"><span>Home</span><i class="fas fa-home"></i></a>
             </div>  
@@ -60,7 +60,7 @@ const CP = () =>{
             <hr />
             {Object.keys(website).map(id => {
                 if(website[id].domain==="cp"){return(
-                    <a href={website[id].link}>
+                    <a href={"https://"+website[id].link}>
                         <div className="card web-card">
                             <p><span className="web-link">{website[id].link} </span>: {website[id].name}</p>
                         </div>  

@@ -15,7 +15,7 @@ const Resources = () =>{
             </div>
             <div className="link">
                  <i className="fas fa-sitemap"></i>
-                 <a href="/cp">Competitve Programming</a>
+                 <a href="/cp">Data structure & Algo</a>
                  <i className="fas fa-chevron-right"></i>
             </div>
             <div className="link">

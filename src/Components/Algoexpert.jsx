@@ -6,7 +6,7 @@ import "../Style/Algoexpert.css"
 const Algoexpert = () =>{
     return(
         <section class="algo container">
-            <a href="#">
+            <a href="http://bit.ly/linktreealgoexpert">
             <div class = "algoexpert">
                 <h2>Algoexpert.io</h2>
                 <p>The ultimate resource to prepare for coding interview. Everyting you

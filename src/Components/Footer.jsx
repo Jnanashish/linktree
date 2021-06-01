@@ -2,6 +2,7 @@ import react,{useState, useEffect} from "react";
 
 // css
 import "../Style/Footer.css"
+import Counter from "./Counter";
 
 const Footer = () =>{
     const [count, setCount] = useState('')
@@ -12,7 +13,7 @@ const Footer = () =>{
         fetch('https://api.countapi.xyz/update/thecodergeek.co/pageview/?amount=1')
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             setCount(data.value)
         })
     }
@@ -26,3 +27,4 @@ const Footer = () =>{
 }
 
 export default Footer;
+

@@ -89,6 +89,10 @@ const Admin = () =>{
         setName('');
         setLink('');
     }
+  //  {
+
+//}
+    //eada78f1-e283-4de3-879a-02abd75fbc21
     // set the flag acc to value of radio button
     const [flag, setFlag] = useState('');
     const onChangeValue = (event) => {

@@ -24,7 +24,7 @@ const Profile = () => {
         <ul class="flex">
             <li><a href="/">Home</a></li>
             <li><a href="/web">Web development</a></li>
-            <li><a href="/cp">Competitive Programming</a></li>
+            <li><a href="/cp">Data structure & Algo</a></li>
             <li><a href="/ml">Machine Learning</a></li>
         </ul>
     </section>

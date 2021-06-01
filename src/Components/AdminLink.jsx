@@ -9,8 +9,8 @@ import "../Style/AdminLink.css"
 const AdminLink = (props) => {
   console.log(props);
   // state to hold the updated link
-  const [newlink, setNewlink] = useState('')
-  const [newname, setNewname] = useState('')
+  const [newlink, setNewlink] = useState(props.link.link)
+  const [newname, setNewname] = useState(props.link.name)
 
   // function to delete the link
   const deleteLink = () =>{
