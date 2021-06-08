@@ -7,7 +7,7 @@ import firebase from "firebase";
 import "../Style/AdminLink.css"
 
 const AdminLink = (props) => {
-  console.log(props);
+  // console.log(props);
   // state to hold the updated link
   const [newlink, setNewlink] = useState(props.link.link)
   const [newname, setNewname] = useState(props.link.name)

@@ -17,6 +17,9 @@ import Web from "./Components/CodingRes/Web";
 import ML from "./Components/CodingRes/ML";
 import CP from "./Components/CodingRes/CP";
 import Counter from "./Components/Counter";
+import Linktree from "./Components/Page/Linktree"
+
+
 
 // Main style
 import "./Style/App.css"
@@ -36,6 +39,7 @@ const App = () =>{
           <Route exact path = "/cp" component={CP}/>
           <Route exact path = "/ml" component={ML}/>
           <Route exact path = "/count" component={Counter}/>
+          <Route exact path = "/links" component={Linktree}/>
           <Route exact path = "*" component={Home}/>
         </Switch>
       </UserContext.Provider>

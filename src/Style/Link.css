@@ -5,6 +5,9 @@
 .resource a {
   justify-self: start;
 }
+.linktree {
+  /* margin-top: 100px; */
+}
 .link {
   max-width: 500px;
   /* background-color: var(--primayblue-color); */

@@ -36,6 +36,7 @@ const Admin = () =>{
     const [featured, setFeatured] = useState({})   // featured link
     const [resource, setResource] = useState({})   // Resource link
     const [website, setWebsite] = useState({})   // Resource link
+    const [linktree, setLinktree] = useState({})   // Resource link
 
     // resource
     const [instructor, setInstructor] = useState('');
@@ -45,7 +46,7 @@ const Admin = () =>{
 
 
     useEffect(()=>{
-        getlinks(); getfeatured(); getresource(); getwebsite();
+        getlinks(); getfeatured(); getresource(); getwebsite(); getlinktree();
     },[])  // blank to run only on first time
 
     // function to receive the details from firebase
@@ -53,6 +54,12 @@ const Admin = () =>{
         const linkref = firebase.database().ref('links');
         linkref.on("value", snapshot =>{
             if(snapshot.val() != null) setLinks({...snapshot.val()})
+        })
+    }
+    const getlinktree = () =>{
+        const linkref = firebase.database().ref('linktree');
+        linkref.on("value", snapshot =>{
+            if(snapshot.val() != null) setLinktree({...snapshot.val()})
         })
     }
     // receive all the featured link data
@@ -83,8 +90,9 @@ const Admin = () =>{
             flag === "link" && db.database().ref('links/' + v4()).set({name, link, icon})   //link 
             flag === "featured" && db.database().ref('featured/' + v4()).set({name, link})  // featured link  
             flag === "udemy" && db.database().ref('udemy/' + v4()).set({name, link,icon,domain})  //udemy link    
-            flag === "resource" && db.database().ref('resource/' + v4()).set({name, link,domain, instructor, price,provider})  //udemy link    
+            flag === "resource" && db.database().ref('resource/' + v4()).set({name, link,domain, instructor, price,provider})  //udemy    
             flag === "website" && db.database().ref('website/' + v4()).set({name, link, domain})  //imp websites   
+            flag === "linktree" && db.database().ref('linktree/' + v4()).set({name, link})  //imp websites   
         } catch (error) { console.log(error);}
         setName('');
         setLink('');
@@ -150,7 +158,7 @@ const Admin = () =>{
                 <FormControlLabel className="radioButton"  value="featured" control={<Radio />} label="Featured" />
                 <FormControlLabel className="radioButton"  value="resource" control={<Radio />} label="Resources" />
                 <FormControlLabel className="radioButton"  value="website" control={<Radio />} label="Website" />
-                {/* <FormControlLabel className="radioButton"  value="udemy" control={<Radio />} label="Udemy" /> */}
+                <FormControlLabel className="radioButton"  value="linktree" control={<Radio />} label="Instagram" />
               </RadioGroup>
             </FormControl>
     
@@ -178,6 +186,15 @@ const Admin = () =>{
                 return(
                     <div>
                         <AdminLink key={id} type={'featured'} link = {temp} id = {id} />
+                    </div>
+                )
+            })}
+            <h2>Links for Instagram</h2>
+            {Object.keys(linktree).map(id => {
+                const temp = linktree[id]
+                return(
+                    <div>
+                        <AdminLink key={id} type={'linktree'} link = {temp} id = {id} />
                     </div>
                 )
             })}
