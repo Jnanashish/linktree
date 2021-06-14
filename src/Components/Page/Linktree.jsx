@@ -16,8 +16,8 @@ const Linktree =() =>{
         getdetails();
     },[])  // blank to run only on first time
 
-    const getdetails = () =>{
-        const linkref = firebase.database().ref('linktree');
+    const getdetails = async () =>{
+        const linkref = await firebase.database().ref('linktree');
         linkref.on("value", snapshot =>{
             if(snapshot.val() != null)
                 setLinks({
@@ -30,16 +30,23 @@ const Linktree =() =>{
     return (
         <div>
             <Profile/>
-            <section className="resource linktree">
-            {/* <h3>Find your links here</h3> */}
+            <hr classname="line"/>
+            <section className="container resource">
+            <h3>Get all the Important Links 👇</h3>
             {Object.keys(links).map(id => {
                 return(
-                    <div className="link left">
-                        <i class="fas fa-hand-point-right"></i>
+                    <div className="link instagram">
                         <a href={links[id].link}>{links[id].name}</a>
                     </div>
                 )
             })}
+            <br />
+            <div className="link instagram fixed">
+                <a href="https://www.algoexpert.io/thecodergeek"><b>Algoexpert :</b> 🚀 The ultimate resource to prepare for Coding Interview</a>
+            </div>
+            <div className="link instagram">
+                <a href="https://thecodergeek.co/web">Web development resources</a>
+            </div>
             </section>
         </div>
     )

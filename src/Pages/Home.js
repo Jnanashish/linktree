@@ -8,6 +8,7 @@ import Featured from "../Components/Featured";
 import Resources from '../Components/Resources';
 import Footer from '../Components/Footer';
 import Email1 from '../Components/Email1';
+import Social from '../Components/Social';
 
 const Home= () => {
     return (
@@ -17,6 +18,7 @@ const Home= () => {
             <Links/>
             <Resources/>
             <Algoexpert/>
+            <Social/>
             <Email1/>
             <Footer/>
         </div>

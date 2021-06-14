@@ -5,9 +5,7 @@
 .resource a {
   justify-self: start;
 }
-.linktree {
-  /* margin-top: 100px; */
-}
+
 .link {
   max-width: 500px;
   /* background-color: var(--primayblue-color); */
@@ -106,6 +104,26 @@ h3 {
   grid-row: 1;
   float: right;
   margin-right: 10px;
+}
+hr {
+  margin-top: 10px;
+  color: #0a2540;
+  opacity: 0.6;
+}
+.instagram {
+  background-color: rgb(238, 244, 254);
+
+  text-align: left;
+}
+.instagram a {
+  color: rgb(42, 92, 167);
+  /* color: black; */
+}
+.fixed {
+  background-color: rgb(85, 150, 246);
+}
+.fixed a {
+  color: #fff;
 }
 @media (max-width: 400px) {
   .resource .grid {

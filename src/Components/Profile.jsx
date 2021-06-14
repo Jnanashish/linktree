@@ -14,7 +14,7 @@ const Profile = () => {
     <header className="header grid">
         <img className="logo" src={logo} alt="logo"/>
         <div className="header-text">
-            <h1>@thecodergeek</h1>
+            <h1><span>@</span>thecodergeek</h1>
             <p>Get The best Programming Courses, Books, Videos. Join our community .</p>
         </div>
     </header>
