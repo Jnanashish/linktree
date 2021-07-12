@@ -111,19 +111,20 @@ hr {
   opacity: 0.6;
 }
 .instagram {
+  /* background-color: rgb(85, 150, 246); */
   background-color: rgb(238, 244, 254);
 
   text-align: left;
 }
 .instagram a {
+  /* color: #fff; */
   color: rgb(42, 92, 167);
-  /* color: black; */
 }
 .fixed {
-  background-color: rgb(85, 150, 246);
+  background-color: rgb(238, 244, 254);
 }
 .fixed a {
-  color: #fff;
+  color: rgb(42, 92, 167);
 }
 @media (max-width: 400px) {
   .resource .grid {

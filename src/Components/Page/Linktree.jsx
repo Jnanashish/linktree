@@ -6,6 +6,7 @@ import "../../Style/App.css"
 import "../../Style/Link.css"
 
 import Profile from "../Profile"
+import UdemyCard from '../UiComponent/UdemyCard';
 
 
 const Linktree =() =>{
@@ -44,10 +45,12 @@ const Linktree =() =>{
             <div className="link instagram fixed">
                 <a href="https://www.algoexpert.io/thecodergeek"><b>Algoexpert :</b> 🚀 The ultimate resource to prepare for Coding Interview</a>
             </div>
-            <div className="link instagram">
+            <div style={{backgroundColor: "rgb(85, 150, 246)", color:"#fff"}} className="link instagram">
                 <a href="https://thecodergeek.co/web">Web development resources</a>
             </div>
             </section>
+            
+            <UdemyCard/>
         </div>
     )
 }

@@ -23,6 +23,7 @@ import Linktree from "./Components/Page/Linktree"
 
 // Main style
 import "./Style/App.css"
+import UdemyCard from "./Components/UiComponent/UdemyCard";
 
 const App = () =>{
   // state for user
@@ -40,6 +41,7 @@ const App = () =>{
           <Route exact path = "/ml" component={ML}/>
           <Route exact path = "/count" component={Counter}/>
           <Route exact path = "/links" component={Linktree}/>
+          <Route exact path = "/test" component={UdemyCard}/>
           <Route exact path = "*" component={Home}/>
         </Switch>
       </UserContext.Provider>
